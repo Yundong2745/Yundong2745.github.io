@@ -1,0 +1,108 @@
+/* Set the background color of the page */
+body {
+    background-color: rgb(236, 237, 235);
+  }
+
+  #center {
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  /* Center the content of the page */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style the header */
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(34, 36, 73);
+    margin-bottom: 30px;
+  }
+  
+  /* Style the input and button */
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(34, 36, 73);
+    margin-bottom: 10px;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 18px;
+    color: rgb(34, 36, 73);
+    border: 1px solid rgb(65, 76, 135);
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(236, 237, 235);
+    background-color: rgb(65, 76, 135);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the table */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  /* Set the width of the Statistic column */
+  #results-table th:first-child,
+  #results-table td:first-child {
+    width: 160px;
+  }
+
+  th {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(236, 237, 235);
+    background-color: rgb(65, 76, 135);
+    padding: 10px;
+    text-align: left;
+  }
+  
+  td {
+    font-size: 18px;
+    color: rgb(34, 36, 73);
+    padding: 10px;
+    border: 1px solid rgb(156, 179, 212);
+  }
+  
+  /* Style the table rows */
+  tr:nth-child(even) {
+    background-color: rgb(156, 179, 212);
+  }
+  
+  tr:nth-child(odd) {
+    background-color: rgb(236, 237, 235);
+  }
+  
+  /* Style the table cells with the statistics values */
+  #summation,
+  #mean,
+  #pvariance,
+  #svariance,
+  #sstddev,
+  #pstddev,
+  #sstderr,
+  #pstderr,
+  #absdev,
+  #abserr {
+    font-weight: bold;
+  }
+  
