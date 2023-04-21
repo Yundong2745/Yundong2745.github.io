@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>My Profile Card</title>
+</head>
+
+<body>
+  <div class="card">
+    <div class="imgBx">
+      <img src="img.jpg">
+    </div>
+    <div class="content">
+      <div class="details">
+        <h2>ZHANG Yundong<br><span>Student of SYSU</span></h2>
+        <div class="data">
+          <h3>2<br><span>Posts</span></h3>
+          <h3>0<br><span>Followers</span></h3>
+          <h3>1<br><span>Following</span></h3>
+        </div>
+        <div class="actionBtn">
+          </a><button>Follow</button>
+          </a><button>Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  // Get the "Follow" button element
+  var followBtn = document.querySelector('.actionBtn button:first-of-type');
+
+  // Add a click event listener to the button
+  followBtn.addEventListener('click', function() {
+    // Set the URL to redirect to
+    window.location.href = 'https://github.com/Yundong2745';
+  });
+  
+  // Get the "Message" button element
+  var messageBtn = document.querySelector('.actionBtn button:first-of-type');
+
+  // Add a click event listener to the button
+  messageBtn.addEventListener('click', function() {
+    // Set the URL to redirect to
+    window.location.href = 'https://github.com/Yundong2745';
+  });
+
+</script>
+</html>
