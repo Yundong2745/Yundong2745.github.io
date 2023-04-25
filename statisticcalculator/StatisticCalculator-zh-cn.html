@@ -11,7 +11,7 @@
   <body>
     <div id="center">
       <img src="SYSU.png" name="SYSUimg" alt="Statistics Calculator" width="300" height="140">
-      <h1>大学物理实验计算器</h1>
+      <h1>大学物理实验误差计算器</h1>
       <label for="data">输入数据（数据间以逗号或空格隔开。例：1 2 3 4 或 1,2,3,4）:</label>
       <br>
       <textarea id="data" name="data"></textarea>
@@ -34,13 +34,17 @@
         <td>$$*均值:\bar{x}$$</td>
         <td>$$\frac{1}{n}\sum_{i=1}^{n}x_i$$</td>
         <td id="mean"></td>
-        
       </tr>
       <tr>
+        <td>$$测量列的实验标准差:s_x$$</td>
+        <td>$$\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2}$$</td>
+        <td id="sstddev"></td>
+      </tr>
+      <!-- <tr>
         <td>$$*样本方差:s^2_x$$</td>
         <td>$$\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2$$</td>
         <td id="svariance"></td>
-      </tr>
+      </tr> -->
       <!-- <tr>
         <td>$$*方差:\sigma^2_x$$</td>
         <td>$$\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2$$</td>
@@ -48,18 +52,8 @@
       </tr> -->
       <tr>
         <td>$$*平均值的实验标准差:s_{\bar{x}}$$</td>
-        <td>$$\sqrt{\frac{1}{n}s^2_x}$$</td>
+        <td>$$\sqrt{\frac{1}{n(n-1)}\sum_{i=1}^{n}(x_i-\bar{x})^2}$$</td>
         <td id="sstderr"></td>
-      </tr>
-      <tr>
-        <td>$$*平均值的平均绝对误差:\eta_{\bar{x}}$$</td>
-        <td>$$\frac{1}{n\sqrt{n}}\sum_{i=1}^{n}{\left\lvert{x_i-\bar{x}}\right\rvert}$$</td>
-        <td id="abserr"></td>
-      </tr>
-      <tr>
-        <td>$$实验标准偏差:s_x$$</td>
-        <td>$$\sqrt{s^2_x}$$</td>
-        <td id="sstddev"></td>
       </tr>
       <tr>
         <td>$$测量列的平均绝对误差:\eta_x$$</td>
@@ -67,18 +61,23 @@
         <td id="absdev"></td>
       </tr>
       <tr>
-        <td>$$测量列的标准偏差:\sigma_x$$</td>
-        <td>$$\sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2}$$</td>
+        <td>$$*平均值的平均绝对误差:\eta_{\bar{x}}$$</td>
+        <td>$$\frac{1}{n\sqrt{n}}\sum_{i=1}^{n}{\left\lvert{x_i-\bar{x}}\right\rvert}$$</td>
+        <td id="abserr"></td>
+      </tr>
+      <!-- <tr>
+        <td>$$测量列的标准误差:\sigma_x(假定A=\bar x)$$</td>
+        <td>$$\sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i-A)^2}$$</td>
         <td id="pstddev"></td>
       </tr>
       <tr>
         <td>$$平均值的标准误差:\sigma_{\bar{x}}$$</td>
         <td>$$\frac{1}{\sqrt{n}}\sigma_x$$</td>
         <td id="pstderr"></td>
-      </tr>
+      </tr> -->
       </table>
-      <p>带*的为随机变量统计值的估计，在实际运用中常用。</p><br>
-      <p id="note">©2023 Y.D ZHANG & J.J WANG</p>
+      <p>注：本网页仅列出了部分常用计算公式，可用于直接测量量随机误差的计算，带*式子在实际运用中更加常用。对间接测量量的误差分析请结合误差传递公式。关于公式使用的详细情况请以教材为准。</p><br>
+      <p id="note">©2023 J.J WANG & Y.D ZHANG</p>
     </div>     
     <!-- <script src="statistics.js"></script> -->
   </body>
