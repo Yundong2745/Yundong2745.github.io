@@ -4,7 +4,7 @@ body {
   }
 
   #center {
-    width: 60%;
+    width: 75%;
     margin: 0 auto;
   }
   
@@ -20,7 +20,8 @@ body {
     font-size: 36px;
     font-weight: bold;
     color: rgb(34, 36, 73);
-    margin-bottom: 30px;
+    margin-bottom:30px;
+    text-align: center;
   }
   
   /* Style the input and button */
@@ -53,6 +54,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
+    margin-left: 46%;
   }
   
   /* Style the table */
@@ -74,6 +76,7 @@ body {
     background-color: rgb(65, 76, 135);
     padding: 10px;
     text-align: center;
+    width: 250px;
   }
   
   td {
@@ -105,6 +108,7 @@ body {
   #abserr {
     font-weight: bold;
     text-align: center;
+    color: rgb(65, 76, 135);
   } 
   
   /* Style the table cells with the formulas */
@@ -113,7 +117,6 @@ body {
     font-weight: normal;
     color: rgb(65, 76, 135);
     padding-left: 20px;
-    width: 300px;
   }
   .note {
     font-size: 18px;

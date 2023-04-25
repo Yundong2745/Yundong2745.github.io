@@ -10,71 +10,74 @@
   </head>
   <body>
     <div id="center">
-    <img src="SYSU.png" alt="Statistics Calculator" width="300" height="140"><h1>误差计算器</h1>
-    <label for="data">输入数据（数据间以逗号或空格隔开。例：1 2 3 4 或 1,2,3,4）:</label>
-    <br>
-    <textarea id="data" name="data"></textarea>
-    <br>
-    <button id="calculate-button">计算</button>
-    <br>
-    <table id="results-table">
+      <img src="SYSU.png" name="SYSUimg" alt="Statistics Calculator" width="300" height="140">
+      <h1>大学物理实验误差计算器</h1>
+      <label for="data">输入数据（数据间以逗号或空格隔开。例：1 2 3 4 或 1,2,3,4）:</label>
+      <br>
+      <textarea id="data" name="data"></textarea>
+      <br>
+      <button id="calculate-button">点此计算</button>
+      <br>
+      <table id="results-table">
       <tr>
-        <th>类型</th>
-        <th>值</th>
+        <th>计算类型</th>
         <th>公式</th>
+        <th>计算值</th>
       </tr>
       <tr>
-        <td>$$总和:\sum x$$</td>
-        <td id="summation"></td>
+        <td>$$总和:\sum{x}$$</td>
         <td>$$\sum_{i=1}^{n}x_i$$</td>
+        <td id="summation"></td>
+        
       </tr>
       <tr>
         <td>$$均值:\bar{x}$$</td>
-        <td id="mean"></td>
         <td>$$\frac{1}{n}\sum_{i=1}^{n}x_i$$</td>
+        <td id="mean"></td>
+        
       </tr>
       <tr>
+        <td>$$样本方差:s^2_x$$</td>
+        <td>$$\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2$$</td>
+        <td id="svariance"></td>
+      </tr>
+      <!-- <tr>
+        <td>$$*方差:\sigma^2_x$$</td>
+        <td>$$\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2$$</td>
+        <td id="pvariance"></td>
+      </tr> -->
+      <tr>
         <td>$$平均值的实验标准差:s_{\bar{x}}$$</td>
+        <td>$$\sqrt{\frac{1}{n}s^2_x}$$</td>
         <td id="sstderr"></td>
-        <td>$$\sqrt{\frac{1}{n (n-1)}\sum_{i=1}^{n}(x_i-\bar{x})^2}$$</td>
       </tr>
       <tr>
         <td>$$平均值的平均绝对误差:\eta_{\bar{x}}$$</td>
-        <td id="abserr"></td>
         <td>$$\frac{1}{n\sqrt{n}}\sum_{i=1}^{n}{\left\lvert{x_i-\bar{x}}\right\rvert}$$</td>
+        <td id="abserr"></td>
       </tr>
       <tr>
-        <td>$$*方差:\sigma^2_x$$</td>
-        <td id="pvariance"></td>
-        <td>$$\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2$$</td>
-      </tr>
-      <tr>
-        <td>$$*实验方差:s^2_x$$</td>
-        <td id="svariance"></td>
-        <td>$$\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2$$</td>
-      </tr>
-      <tr>
-        <td>$$*标准差:\sigma_x$$</td>
-        <td id="pstddev"></td>
-        <td>$$\sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2}$$</td>
-      </tr>
-      <tr>
-        <td>$$*实验标准差:s_x$$</td>
+        <td>$$实验标准偏差:s_x$$</td>
+        <td>$$\sqrt{s^2_x}$$</td>
         <td id="sstddev"></td>
-        <td>$$\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2}$$</td>
       </tr>
       <tr>
-        <td>$$*平均值的标准误差:\sigma_{\bar{x}}$$</td>
-        <td id="pstderr"></td>
-        <td>$$\sqrt{\frac{1}{n(n-1)}\sum_{i=1}^{n}(x_i-\bar{x})^2}$$</td>
-      </tr>
-      <tr>
-        <td>$$*测量列的平均绝对误差:\eta_x$$</td>
-        <td id="absdev"></td>
+        <td>$$测量列的平均绝对误差:\eta_x$$</td>
         <td>$$\frac{1}{n}\sum_{i=1}^{n}{\left\lvert{x_i-\bar{x}}\right\rvert}$$</td>
+        <td id="absdev"></td>
+      </tr>
+      <tr>
+        <td>$$测量列的标准偏差:\sigma_x$$</td>
+        <td>$$\sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2}$$</td>
+        <td id="pstddev"></td>
+      </tr>
+      <tr>
+        <td>$$平均值的标准误差:\sigma_{\bar{x}}$$</td>
+        <td>$$\frac{1}{\sqrt{n}}\sigma_x$$</td>
+        <td id="pstderr"></td>
       </tr>
       </table>
-    <p id="note">* 的计算结果未必有实际意义，请谨慎选用。</p>
+      <p id="note">©2023 Y.D ZHANG & J.J WANG</p>
     </div>     
     <!-- <script src="statistics.js"></script> -->
   </body>
@@ -84,7 +87,7 @@
     const dataTextarea = document.getElementById('data');
     const summationTd = document.getElementById('summation');
     const meanTd = document.getElementById('mean');
-    const pvarianceTd = document.getElementById('pvariance');
+    // const pvarianceTd = document.getElementById('pvariance');
     const svarianceTd = document.getElementById('svariance');
     const sampleStddevTd = document.getElementById('sstddev');
     const populationStddevTd = document.getElementById('pstddev');
@@ -112,7 +115,7 @@
     let pVariance = squaredTotalDev / data.length;
     let sVariance = squaredTotalDev / (data.length - 1);
     let pStdDev = Math.sqrt(pVariance);
-    let sStdDev = Math.sqrt(sVariance);
+    let sStdDev = Math.sqrt(squaredTotalDev / (data.length - 1));
     let pStdErr = pStdDev / Math.sqrt(data.length);
     let sStdErr = sStdDev / Math.sqrt(data.length);
     let absDev = absTotalDev / data.length;
@@ -121,7 +124,7 @@
     // Update the HTML table with the computed statistics
     document.getElementById("summation").textContent = sum;
     document.getElementById("mean").textContent = mean;
-    document.getElementById("pvariance").textContent = pVariance;
+    // document.getElementById("pvariance").textContent = pVariance;
     document.getElementById("svariance").textContent = sVariance;
     document.getElementById("pstddev").textContent = pStdDev;
     document.getElementById("sstddev").textContent = sStdDev;
