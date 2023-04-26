@@ -122,3 +122,8 @@ body {
     font-size: 18px;
     color: rgb(34, 36, 73);
   }
+  hr {
+    border: 1px solid rgb(65, 76, 135);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }

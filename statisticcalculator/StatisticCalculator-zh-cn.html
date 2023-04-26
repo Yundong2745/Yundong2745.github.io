@@ -76,7 +76,8 @@
         <td id="pstderr"></td>
       </tr> -->
       </table>
-      <p>注：本网页仅列出了部分常用计算公式，可用于直接测量量随机误差的计算，带*式子在实际运用中更加常用。对间接测量量的误差分析请结合误差传递公式。关于公式使用的详细情况请以教材为准。</p><br>
+      <hr>
+      <p>注：上述公式用于直接测量量随机误差的计算，带*式子在实际运用中更加常用。如计算间接测量量的误差，请结合误差传递公式。</p><br>
       <p id="note">©2023 J.J WANG & Y.D ZHANG</p>
     </div>     
     <!-- <script src="statistics.js"></script> -->
@@ -97,7 +98,7 @@
     const abserrorTd = document.getElementById('abserr');
 
     calculateButton.addEventListener('click', () => {
-    const data = dataTextarea.value.trim().split(/[,\s]/).map(parseFloat);
+    const data = dataTextarea.value.trim().split(/[,\s，]/).map(parseFloat);
     
     // Compute the statistics using the provided Java code
     let sum = 0.0;
